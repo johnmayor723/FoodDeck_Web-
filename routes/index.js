@@ -7,9 +7,11 @@ const API_URL = "https://pantry-hub-server.onrender.com/api/products";
 // Homepage route
 router.get("/", async (req, res) => {
   const user = req.session.user || null;
+  const cart = req.session.cart || null;
+  const itemCount = cart.totalItems
   try {
     const { data: products } = await axios.get(API_URL);
-    res.render("index", { products, user });
+    res.render("index", { products, user, itemCount });
   } catch (err) {
     res.status(500).send("Error loading products");
   }
