@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const expressLayouts = require('express-ejs-layouts'); // Import express-ejs-layouts
+//const expressLayouts = require('express-ejs-layouts'); // Import express-ejs-layouts
 
 const app = express();
 
@@ -9,8 +9,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Use express-ejs-layouts
-app.use(expressLayouts);
-app.set('layout', 'layout'); // Define the default layout file
+//app.use(expressLayouts);
+//app.set('layout', 'layout'); // Define the default layout file
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
